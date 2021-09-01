@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <!-- Custom CSS file -->
+	<link rel="stylesheet" href="style.css">
+    <!-- jQuery plugin - convForm-->
+    <link rel="stylesheet" href="jquery.convform.css">
+    <!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500&display=swap">
+    <!-- font awesome icon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+	integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Website Demo</title>
+</head>
+
+<body>
+<!-- chatbot -->
+<div class="chat-icon">
+    <i class="fas fa-comments"></i>
+</div>
+<div class="chat-box">
+    <i class="fas fa-times close-chat"></i>
+    <div id="chat" class="conv-form-wrapper" class="hidden">
+        <form action="" method="GET">
+            <input type="text" name="name" data-conv-question="Welcome to our website! Please enter your name.">
+            <select name="category" data-conv-question="Hello, {name}:0! How can I help you?">
+                <option value="services">View Our Services</option>
+                <option value="portfolio">View Our Portfolio</option>
+                <option value="other">Other</option>
+            </select>
+            <div data-conv-fork="category">
+                <div data-conv-case="services">
+                     <input type="text" data-conv-question="Great! Click <a href='#services'>Here</a> for more info" data-no-answer="true">
+                     <select name="questions" data-conv-question="Do you have any other questions?">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div data-conv-case="portfolio">
+                    <input type="text" data-conv-question="Nice! Click <a href='#portfolio'>Here</a> for more info" data-no-answer="true">
+                    <select name="questions" data-conv-question="Do you have any other questions?">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div data-conv-case="other">
+                    <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+               </div>
+            </div>
+            <div data-conv-fork="questions">
+                <div data-conv-case="yes">
+                    <input type="text" data-conv-question="Please contact us via phone or email for more questions. <a href='#contact'>Contact info</a>">
+                </div>
+                <div data-conv-case="no">
+                    <input type="text" data-conv-question="Thank you for visiting our website. Have a nice day!">
+                </div>
+            </div>        
+        </form>
+    </div>
+</div>
+<!-- end chatbot -->
+
+<!-- header -->
+<header>
+    <a href="#" class="logo"><span>Your</span>Logo</a>
+    <div class="hamburger">
+        <i class="fas fa-bars" id="menu-btn"></i>
+    </div>
+    <nav class="navbar">
+		<a class="navLink" href="#home">Home</a>
+        <a class="navLink" href="#about">About</a>
+        <a class="navLink" href="#services">Services</a>
+        <a class="navLink" href="#portfolio">Portfolio</a>
+        <a class="navLink" href="#contact">Contact</a>
+    </nav>
+</header>
+<!-- end header -->
+
+<!-- home section -->
+<section class="home" id="home">
+    <div class="content">
+        <h1>Welcome</h1>
+        <h3>Present a problem and offer a solution...</h3><br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            pharetra mauris vitae nunc suscipit dapibus. Donec ultrices
+            lacinia sapien, vitae aliquet justo. Aliquam quam velit, dictum
+            non ultrices imperdiet, maximus elementum ipsum.
+        </p>
+		<a href="#about" type="button" class="btn">Discover Now</a>
+    </div>
+
+    <div class="image">
+        <img src="images/working.svg" class="drop-shadow" alt="">
+    </div>
+
+    <div class="custom-shape-divider-bottom-1630264813">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</section>
+<!-- end home section-->
+
+<!-- about section -->
+<section class="about" id="about">
+    <div class="section-title">
+        <h1>About <span>Us</span></h1>
+    </div>
+    <div class="container">
+        <div class="image">
+            <img src="images/data.svg" class="drop-shadow" alt="" loading="lazy">
+        </div>
+        <div class="content">
+            <h3>A Perfect Solution For Your Business</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Magnam, sequi autem qui numquam tempora beatae laboriosam 
+                laborum quaerat velit nobis libero quae earum! Quibusdam quam 
+                ut aperiam incidunt eum? Iure!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Magnam, sequi autem qui numquam tempora beatae laboriosam 
+                laborum quaerat velit nobis libero quae earum! Quibusdam quam 
+                ut aperiam incidunt eum? Iure!
+            </p> 
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Magnam, sequi autem qui numquam tempora beatae laboriosam 
+                laborum quaerat velit nobis libero quae earum! Quibusdam quam 
+                ut aperiam incidunt eum? Iure!
+            </p>
+            <div class="buttons">
+                <a href="#services" type="button" class="btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end about section-->
+
+<!-- services section -->
+<section class="services" id="services">
+    <div class="section-title">
+        <h1>Services</h1>
+    </div>
+    <div class="all-services">
+        <div class="service-item">
+            <div class="icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h3>Service 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                pharetra mauris vitae nunc suscipit dapibus. Donec ultrices
+                lacinia sapien, vitae aliquet justo.
+            </p>
+            <a href="#services" type="button" class="btn">Read More</a>
+        </div>
+        <div class="service-item">
+            <div class="icon">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Service 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                pharetra mauris vitae nunc suscipit dapibus. Donec ultrices
+                lacinia sapien, vitae aliquet justo.
+            </p>
+            <a href="#services" type="button" class="btn">Read More</a>
+        </div>
+        <div class="service-item">
+            <div class="icon">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <h3>Service 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                pharetra mauris vitae nunc suscipit dapibus. Donec ultrices
+                lacinia sapien, vitae aliquet justo.
+            </p>
+            <a href="#services" type="button" class="btn">Read More</a>
+        </div>
+    </div>
+</section>
+<!-- end services section-->
+
+<!-- newsletter -->
+<div class="newsletter">
+    <h3>Subscribe For More</h3>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident porro fugit omnis ex 
+        molestiae perferendis et vitae maiores qui ipsum corporis explicabo delectus, sapiente, 
+        cumque numquam, excepturi velit. At, doloremque?
+    </p>
+    <form action="">
+        <input type="email" placeholder="enter your email">
+        <input type="submit" value="Subscribe">
+    </form>
+    <div class="custom-shape-divider-bottom-1630264813">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</div>
+<!-- end newsletter-->
+
+<!-- portfolio section -->
+<section class="portfolio" id="portfolio">
+        <div class="section-title">
+            <h1>Portfolio</h1>
+        </div>
+        <div class="project-filters">
+            <ul class="filters">
+                <li class="filter active" data-filter="All">All</li>
+                <li class="filter" data-filter="code">Code</li>
+                <li class="filter" data-filter="laptop">Laptop</li>
+                <li class="filter" data-filter="notes">Notes</li>
+                <li class="filter" data-filter="work">Work</li>
+            </ul>
+        </div>
+        <div class="all-projects">
+                <div class="project-box code">
+                    <!-- Image by Pexels from Pixabay.com -->
+                    <img src="images/image1.jpg" alt="" class="modal-1">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-1">Project Title</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-1">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box laptop">
+                    <!-- Image by Free-Photos from Pixabay.com -->
+                    <img src="images/image2.jpg" alt="" class="modal-2">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-2">Project Two</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box code laptop">
+                    <!-- Image by Stocknap from Pixabay.com -->
+                    <img src="images/image3.jpg" alt="" class="modal-3">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-3">Project Three</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box work">
+                    <!-- Image by Free-Photos from Pixabay.com -->
+                    <img src="images/image10.jpg" alt="" class="modal-4">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-4">Project Four</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box notes">
+                    <!-- Image by Carolina Grabowska from Pixabay.com -->
+                    <img src="images/image5.jpg" alt="" class="modal-5">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-5">Project Five</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-5">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box notes work">
+                    <!-- Image by Free-Photos from Pixabay.com -->
+                    <img src="images/image11.jpg" alt="" class="modal-6">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-6">Project Six</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-6">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box laptop code">
+                    <!-- Image by Pexels from Pixabay.com -->
+                    <img src="images/image4.jpg" alt="" class="modal-7">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-7">Project 7</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-7">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box laptop">
+                    <!-- Image by Rudy and Peter Skitterians from Pixabay.com -->
+                    <img src="images/image6.jpg" alt="" class="modal-8">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-8">Title 8</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-8">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box laptop">
+                    <!-- Image by Kevin Phillips from Pixabay.com -->
+                    <img src="images/image7.jpg" alt="" class="modal-9">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-9">Project 9</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-9">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box code">
+                    <!-- Image by fancycrave1 from Pixabay.com -->
+                    <img src="images/image8.jpg" alt="" class="modal-10">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-10">Title 10</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-10">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box laptop">
+                    <!-- Image by Luis J. Albizu from Pixabay.com -->
+                    <img src="images/image9.jpg" alt="" class="modal-11">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-11">Project 11</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-11">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-box laptop work">
+                    <!-- Image by StartupStockPhotos from Pixabay.com -->
+                    <img src="images/image12.jpg" alt="" class="modal-12">
+                    <div class="overlay">
+                        <div class="description">
+                            <h1 class="modal-12">Project 12</h1>
+                            <a href="#modal" type="button" class="btn project-btn" id="modal-12">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="modal" id="modal">
+            <div class="modal-box">
+                <div class="modal-icon">
+                    <i class="fas fa-times modal-close"></i>
+                </div>
+                <div class="modal-img">
+                    <img src="images/image1.jpg" alt="" id="current-img">
+                </div>
+                <div class="modal-content">
+                    <h3 class="modal-title">Modal Title</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente harum nostrum voluptate. 
+                        Pariatur accusantium ullam mollitia minus ipsa odio officia sint laudantium. Est quia velit 
+                        illo? Mollitia unde autem quia! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Sapiente harum nostrum voluptate.
+                    </p>
+                    <div class="modal-links">
+                        <a href="#" type="button" class="btn" id="">Learn More</a>
+                        <a href="#" type="button" class="btn" id="">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end portfolio section-->
+
+ <!-- contact section -->
+<section class="contact" id="contact">
+    <form action="">
+        <h1 class="section-title">Contact Us</h1>
+
+        <div class="inputBox">
+            <input type="text" name="name" required>
+            <label for="name">Name</label>
+        </div>
+        <div class="inputBox">
+            <input type="number" name="phone" required>
+            <label for="phone">Phone</label>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="inputBox">
+            <textarea name="mssg" id="message" cols="30" rows="10"></textarea>
+            <label for="mssg">Message</label>
+        </div>
+        <input type="submit" class="btn" value="Send Message">
+    </form>
+    <div class="image">
+        <img src="images/mailbox.svg" alt="">
+    </div>
+</section>
+<!-- end contact section -->
+
+<!-- footer -->
+<footer>
+    <div class="footer-container">
+        <div class="box">
+            <h3>About Us</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Blanditiis veritatis vitae sapiente, eligendi earum vel omnis 
+                nulla mollitia, officia ipsum expedita voluptates. 
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="box">
+            <h3>Follow Us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <div class="info">
+                <i class="fas fa-phone"></i>
+                <p> +123-456-7890 <br> +111-2222-333 </p>
+            </div>
+            <div class="info">
+                <i class="fas fa-envelope"></i>
+                <p> example@gmail.com <br> example@gmail.com </p>
+            </div>
+            <div class="info">
+                <i class="fas fa-map-marker-alt"></i>
+                <p> California, U.S. </p>
+            </div>
+        </div>
+    </div>
+    <div class="custom-shape-divider-top-1630303224">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</footer>
+<!-- end footer -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery plugin - convform-->
+<script src="jquery.convform.js"></script>
+<!-- JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>
