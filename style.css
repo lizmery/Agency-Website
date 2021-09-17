@@ -80,9 +80,7 @@ section {
     position: fixed;
     right: 20px;
     bottom: 100px;
-    width: 30vw;
-    height: 85vh;
-    max-height: 700px;
+    width: 400px;
     background: #f9f9f9;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
     border-radius: 5px;
@@ -91,18 +89,19 @@ section {
     transform: scaleY(0);
 }
 
+.conv-form-wrapper {
+    background: #fff;
+}
 .chat-box.active {
     transform: scaleY(1);
 }
 
 .conv-form-wrapper textarea {
-    height: 30px;
     overflow: hidden;
     resize: none;
 }
 
 .conv-form-wrapper form {
-    font-size: 1.3rem;
     color: var(--purple);
 }
 
@@ -125,11 +124,11 @@ section {
 div.conv-form-wrapper  div#messages div.message.to {
     background: #c9c9c9;
     color: #292929;
-    font-size: 1.4rem;
+    
 }
 div.conv-form-wrapper div#messages div.message.from {
     background: #403D56 !important;
-    font-size: 1.4rem;
+    
 }
 form.convFormDynamic button.submit {
     color: #403D56 !important;
